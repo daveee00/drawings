@@ -52,16 +52,6 @@
   font-family: "Humane";
   font-size: 8em;
   font-weight: 600;
-  line-height: 0.85 !important; /* Force this value */
-  margin: 0;
-  padding: 0;
-  position: relative;
-  display: inline-block;
-  transform-origin: left top;
-  white-space: nowrap;
-  -webkit-font-smoothing: antialiased; /* Add this for better text rendering */
-  -moz-osx-font-smoothing: grayscale; /* Add this for better text rendering */
-  text-rendering: optimizeLegibility; /* Add this for better text rendering */
 }
 
 .content .content-title {
@@ -72,9 +62,6 @@
   height: 100%;
   display: flex;
   z-index: 2;
-  pointer-events: none;
-  align-items: flex-start; /* Add this */
-  justify-content: flex-start; /* Add this */
 }
 
 .content .content-text {
