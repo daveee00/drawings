@@ -7,6 +7,7 @@
   height: 100vh;
   position: relative;
   border-bottom: 2px solid black;
+  overflow: hidden;
 }
 
 .content .content-title {
@@ -18,7 +19,30 @@
   display: flex;
   z-index: 2;
   padding: 20px 0;
+  pointer-events: none;
 }
+
+#first-drawing .content-title,
+#second-drawing .content-title,
+#third-drawing .content-title,
+#fourth-drawing .content-title,
+#fifth-drawing .content-title,
+#sixth-drawing .content-title {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px 0 0 80px; /* Update padding */
+}
+
+#first-drawing .content-title p,
+#second-drawing .content-title p,
+#third-drawing .content-title p,
+#fourth-drawing .content-title p,
+#fifth-drawing .content-title p,
+#sixth-drawing .content-title p {
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
 
 .content .content-text {
   position: absolute;
