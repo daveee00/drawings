@@ -141,10 +141,6 @@ header .text-icon {
   transition: 0.3s;
 }
 
-header nav .inspo:hover {
-  cursor: pointer;
-}
-
 .inspo:hover .text-icon {
   display: inline;
 }
