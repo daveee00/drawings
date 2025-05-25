@@ -15,7 +15,7 @@
 }
 
 .text-bigger p {
-  color: pink;
+  color:  #231815;
   flex: none;
   font-feature-settings: "palt" 1;
   font-size: 20px;
