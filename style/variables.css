@@ -50,14 +50,18 @@
 
 .title-drawing p {
   font-family: "Humane";
-  color: pink;
   font-size: 8em;
   font-weight: 600;
-  line-height: 1;
-  margin:0;
-  position: relative; /* Add this */
-  display: inline-block; /* Add this */
-  transform-origin: left top; /* Add this */
+  line-height: 0.85 !important; /* Force this value */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  transform-origin: left top;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased; /* Add this for better text rendering */
+  -moz-osx-font-smoothing: grayscale; /* Add this for better text rendering */
+  text-rendering: optimizeLegibility; /* Add this for better text rendering */
 }
 
 .content .content-title {
