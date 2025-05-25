@@ -1,14 +1,3 @@
-@font-face {
-  font-family: "Humane";
-  src: url(https://cdn.jsdelivr.net/gh/daveee00/drawings/fonts/Humane-font/Humane-Bold.otf);
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Humane";
-  src: url(https://cdn.jsdelivr.net/gh/daveee00/drawings/fonts/Humane-font/Humane-Medium.otf);
-  font-weight: 400;
-}
 
 .text-bigger p {
   color: #231815;
