@@ -55,6 +55,9 @@
   font-weight: 600;
   line-height: 1;
   margin:0;
+  position: relative; /* Add this */
+  display: inline-block; /* Add this */
+  transform-origin: left top; /* Add this */
 }
 
 .content .content-title {
@@ -65,6 +68,9 @@
   height: 100%;
   display: flex;
   z-index: 2;
+  pointer-events: none;
+  align-items: flex-start; /* Add this */
+  justify-content: flex-start; /* Add this */
 }
 
 .content .content-text {
