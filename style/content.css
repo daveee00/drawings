@@ -30,7 +30,7 @@
 #sixth-drawing .content-title {
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 20px 0 0 80px; /* Update padding */
+  padding: 20px 0 0 80px;
 }
 
 #first-drawing .content-title p,
@@ -39,10 +39,13 @@
 #fourth-drawing .content-title p,
 #fifth-drawing .content-title p,
 #sixth-drawing .content-title p {
-  margin: 0; /* Reset margin */
-  padding: 0; /* Reset padding */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  transform-origin: left top;
+  white-space: nowrap; /* Add this */
 }
-
 
 .content .content-text {
   position: absolute;
