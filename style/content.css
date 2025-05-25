@@ -9,10 +9,64 @@
   border-bottom: 2px solid black;
 }
 
+.content .content-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  z-index: 2;
+  padding: 20px 0;
+}
+
+.content .content-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .content-drawing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.content .content-suggestions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+.content .content-drawing img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 /*–––––––primo–––––––*/
 #first-drawing .content-title {
   align-items: flex-start;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 #first-drawing .content-title p {
@@ -20,8 +74,6 @@
 }
 
 #first-drawing .content-text {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -31,8 +83,8 @@
 }
 
 #first-drawing .content-drawing {
-  align-items: last baseline;
-  justify-content: right;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #first-drawing img {
@@ -41,11 +93,10 @@
   margin-bottom: 80px;
 }
 
-
 /*–––––––secondo–––––––*/
 #second-drawing .content-title {
   align-items: flex-start;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 #second-drawing .content-title p {
@@ -53,18 +104,17 @@
 }
 
 #second-drawing .content-text {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
+
 #second-drawing .content-text p {
   margin-left: 400px;
   margin-bottom: 120px;
 }
 
 #second-drawing .content-drawing {
-  align-items: last baseline;
-  justify-content: right;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #second-drawing img {
@@ -76,7 +126,7 @@
 /*–––––––terzo–––––––*/
 #third-drawing .content-title {
   align-items: flex-start;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 #third-drawing .content-title p {
@@ -84,9 +134,7 @@
 }
 
 #third-drawing .content-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #third-drawing .content-text p {
@@ -95,8 +143,8 @@
 }
 
 #third-drawing .content-drawing {
-  align-items: last baseline;
-  justify-content: right;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #third-drawing img {
@@ -107,7 +155,7 @@
 /*–––––––quarto–––––––*/
 #fourth-drawing .content-title {
   align-items: flex-start;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 #fourth-drawing .content-title p {
@@ -115,9 +163,7 @@
 }
 
 #fourth-drawing .content-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #fourth-drawing .content-text p {
@@ -126,19 +172,20 @@
 }
 
 #fourth-drawing .content-drawing {
-  align-items: last baseline;
-  justify-content: right;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #fourth-drawing img {
   height: 80%;
   margin-right: 80px;
-  margin-bottom: px;
+  margin-bottom: 80px;
 }
+
 /*–––––––quinto–––––––*/
 #fifth-drawing .content-title {
   align-items: flex-start;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 #fifth-drawing .content-title p {
@@ -146,9 +193,7 @@
 }
 
 #fifth-drawing .content-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #fifth-drawing .content-text p {
@@ -157,18 +202,19 @@
 }
 
 #fifth-drawing .content-drawing {
-  align-items: last baseline;
-  justify-content: right;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 #fifth-drawing img {
   height: 60%;
   margin-bottom: 120px;
 }
+
 /*–––––––sesto–––––––*/
 #sixth-drawing .content-title {
   align-items: flex-start;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 #sixth-drawing .content-title p {
@@ -176,10 +222,8 @@
 }
 
 #sixth-drawing .content-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #sixth-drawing .content-text p {
@@ -188,13 +232,14 @@
 }
 
 #sixth-drawing .content-drawing {
-  align-items: last baseline;
+  align-items: flex-end;
   justify-content: center;
 }
 
 #sixth-drawing img {
   height: 100%;
 }
+
 /*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 
 .sketchbook {
