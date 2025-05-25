@@ -1,6 +1,16 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 footer p {
     font-size: 12px;
   font-weight: 500;
   text-align: left;
   margin-left: 20px;
+}
+
+footer img {
+    height: 40%;
 }
