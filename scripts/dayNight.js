@@ -21,8 +21,8 @@ function setDayNightBackground() {
     
     if (currentHour >= 8 && currentHour < 19) {
         // Daytime - use cute.webp
-        bgPicture.style.backgroundImage = 'url(./cute.webp)';
-        loader.style.backgroundImage = 'url(./cute.webp)';
+        bgPicture.style.backgroundImage = 'url(https://goodnight-n-draw.netlify.app/cute.webp)';
+        loader.style.backgroundImage = 'url(https://goodnight-n-draw.netlify.app/cute.webp)';
         console.log('Setting daytime background: cute.webp');
     } else {
         // Nighttime - use sunset.jpeg
