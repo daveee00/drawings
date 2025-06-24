@@ -1,10 +1,12 @@
 // Import player-related functions
 import { playerCheck, gradientsCheck, crossCheckPlayer } from './player.js';
+// Import Spotify functionality
+import { initSpotifyFunctionality } from './inspo.js';
 
 const pictureArray = [
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Immagine_4.png",
-  "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Opera_senza_titolo.png",
-  "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Opera_senza_titolo 2.png",
+  "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/oswald-1.png",
+  "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/oswald-2.png",
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Immagine.png",
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Immagine_8.png",
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Immagine_7.png",
@@ -14,7 +16,6 @@ const pictureArray = [
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/Immagine_2.png",
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/array/IMG_0489.png",
   "https://cdn.jsdelivr.net/gh/daveee00/drawings/mickey.png",
-  "https://cdn.jsdelivr.net/gh/daveee00/drawings/selfPt.png",
 ];
 
 const textListElement = [
@@ -30,7 +31,6 @@ const textListElement = [
   "li-10",
   "li-11",
   "li-12",
-  "li-13",
 ];
 
 function logPictureArrayIndices() {}
@@ -46,36 +46,87 @@ function crossCheck(clickedId) {
 function sketchbookShow(clickedId) {
   const index = textListElement.indexOf(clickedId);
   if (index !== -1) {
-    const sketchbookImage = document.querySelector("#skt-canvas img");
-    if (sketchbookImage) {
+    const sketchbookCanvas = document.querySelector("#skt-canvas");
+    if (sketchbookCanvas) {
+      // Remove existing image if any
+      const existingImage = sketchbookCanvas.querySelector("img");
+      if (existingImage) {
+        existingImage.remove();
+      }
+      
+      // Create new image element
+      const sketchbookImage = document.createElement("img");
       sketchbookImage.src = pictureArray[index];
+      sketchbookCanvas.appendChild(sketchbookImage);
+      
       console.log(`Updated sketchbook image to: ${pictureArray[index]}`);
+      
+      // Handle responsive image sizing
+      const handleImageSize = () => {
+        if (window.matchMedia("(max-width: 1000px)").matches) {
+          // Wait for image to load before calculating dimensions
+          sketchbookImage.onload = () => {
+            const containerHeight = sketchbookImage.parentElement.clientHeight;
+            const containerWidth = sketchbookImage.parentElement.clientWidth;
+            const imageRatio = sketchbookImage.naturalWidth / sketchbookImage.naturalHeight;
+            
+            // Calculate dimensions to fit height while maintaining aspect ratio
+            let newHeight = containerHeight;
+            let newWidth = newHeight * imageRatio;
+            
+            // If width is too large, scale based on width instead
+            if (newWidth > containerWidth) {
+              newWidth = containerWidth;
+              newHeight = newWidth / imageRatio;
+            }
+            
+            sketchbookImage.style.maxHeight = `${newHeight}px`;
+            sketchbookImage.style.maxWidth = `${newWidth}px`;
+            sketchbookImage.style.width = "auto";
+            sketchbookImage.style.height = "auto";
+            sketchbookImage.style.objectFit = "contain";
+          };
+        } else {
+          // Reset styles for larger screens
+          sketchbookImage.style.maxHeight = "";
+          sketchbookImage.style.maxWidth = "";
+          sketchbookImage.style.width = "";
+          sketchbookImage.style.height = "";
+          sketchbookImage.style.objectFit = "";
+        }
+      };
+
+      // Set initial size
+      handleImageSize();
+      
+      // Update size on window resize
+      window.addEventListener("resize", handleImageSize);
     }
   }
 }
 
 function updateButtonClasses(clickedId) {
-  // Remove classes from all buttons and their spans
+  // Remove classes from all buttons and their artist elements
   textListElement.forEach((id) => {
     const button = document.getElementById(id);
     if (button) {
       button.classList.remove("list-element-after");
       button.classList.remove("button-after");
-      const span = button.querySelector("span");
-      if (span) {
-        span.classList.remove("list-artist-after");
+      const artistElement = button.querySelector(".list-artist");
+      if (artistElement) {
+        artistElement.classList.remove("list-artist-after");
       }
     }
   });
 
-  // Add classes to clicked button and its span
+  // Add classes to clicked button and its artist element
   const clickedButton = document.getElementById(clickedId);
   if (clickedButton) {
     clickedButton.classList.add("list-element-after");
     clickedButton.classList.add("button-after");
-    const span = clickedButton.querySelector("span");
-    if (span) {
-      span.classList.add("list-artist-after");
+    const artistElement = clickedButton.querySelector(".list-artist");
+    if (artistElement) {
+      artistElement.classList.add("list-artist-after");
     }
   }
 }
@@ -86,9 +137,9 @@ function resetButtonClasses() {
     if (button) {
       button.classList.remove("list-element-after");
       button.classList.remove("button-after");
-      const span = button.querySelector("span");
-      if (span) {
-        span.classList.remove("list-artist-after");
+      const artistElement = button.querySelector(".list-artist");
+      if (artistElement) {
+        artistElement.classList.remove("list-artist-after");
       }
     }
   });
@@ -100,6 +151,9 @@ window.addEventListener("load", () => {
   logTextListElementIndices();
 
   crossCheckPlayer();
+  
+  // Initialize Spotify functionality
+  initSpotifyFunctionality();
 
   // Add click listeners to all list elements
   textListElement.forEach((id) => {
@@ -116,7 +170,7 @@ window.addEventListener("load", () => {
 
   // Add click listener to document for click-outside functionality
   document.addEventListener("click", (event) => {
-    const sketchbookArea = document.querySelector(".sketchbook-canvas-area");
+    const sketchbookArea = document.querySelector(".sketch-area");
     if (sketchbookArea && !sketchbookArea.contains(event.target)) {
       resetButtonClasses();
     }

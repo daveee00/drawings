@@ -20,6 +20,11 @@ function animateHeaderScrollLine() {
 // Function to animate the sketchbook scroll line
 function animateSketchbookScrollLine() {
     const line = document.getElementById('scrolling-line-skt');
+    if (!line) {
+        console.log('Sketchbook scroll line element not found - skipping animation');
+        return;
+    }
+    
     const container = line.parentElement;
     
     // Reset position
