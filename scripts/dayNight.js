@@ -26,8 +26,8 @@ function setDayNightBackground() {
         console.log('Setting daytime background: cute.webp');
     } else {
         // Nighttime - use sunset.jpeg
-        bgPicture.style.backgroundImage = 'url(./sunset.jpeg)';
-        loader.style.backgroundImage = 'url(./sunset.jpeg)';
+        bgPicture.style.backgroundImage = 'url(https://goodnight-n-draw.netlify.app/sunset.jpeg)';
+        loader.style.backgroundImage = 'url(https://goodnight-n-draw.netlify.app/sunset.jpeg)';
         console.log('Setting nighttime background: sunset.jpeg');
     }
 }
