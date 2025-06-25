@@ -1,4 +1,6 @@
-/**/
+@media (max-width: 1000px) {
+
+  /**/
 
 .sketchbook-wrapper{
   width: 100vw;
@@ -11,7 +13,7 @@
 }
 
 .sketch-container {
-  width: calc(100% - 80px);
+  width: calc(100% - 40px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,7 +28,7 @@
   justify-content: end;
   font-family: 'humane';
   text-transform: uppercase;
-  font-size: 9rem;
+  font-size: 7rem;
   padding: 0;
   margin: 0;
 }
@@ -34,7 +36,7 @@
   width: 100%;
   height: 70%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 64px;
 }
@@ -44,41 +46,7 @@
   width: 100%;
   text-align: right;
   opacity: .5;
-}
-
-.sketchbook-container {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-}
-
-.sketchbook-heading {
-  height: fit-content;
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-
-.title-drawing p {
-  font-family: "Humane" !important;
-  font-size: 6em;
-  font-weight: 600;
-  line-height: 1 !important;
-  height: 1em !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.sketchbook-heading p {
-  margin-top: 4% !important;
-  margin-left: 45%;
-  position: relative;
-  left: 0;
+  font-size: 0.8rem;
 }
 
 .sketchbook-canvas-area {
@@ -91,11 +59,6 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.sketchbook-canvas {
-  height: 60vh;
-  margin-bottom: 120px;
 }
 
 #skt-canvas {
@@ -114,7 +77,6 @@
   mix-blend-mode: normal;
 }
 
-/*––––––––––––––––––––––––––––––––––––––––––*/
 /*––––––––––––––––––––––––––––––––––––––––––*/
 
 #list-canvas {
@@ -195,67 +157,4 @@
   -webkit-backdrop-filter: blur(8px); /* Safari support */
   border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-
-#scroll-indicator {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-left: 10%;
-}
-
-#scroll-indicator p {
-  width: 20vh;
-  transform: rotate(90deg);
-  translate: 0% 100%;
-}
-
-#scroll-indicator .skt-scroll-line {
-  margin-top: 80px;
-  height: 50%; 
-  width: 2px;
-  border-radius: 10px;
-}
-
-#scroll-indicator .skt-scroll-line {
-  width: 2%;
-  height: 60%;
-  position: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  overflow: hidden;
-}
-
-#scroll-indicator #scrolling-line-skt {
-  height: 100%;
-  width: 2.5px;
-  border-radius: 10px;
-  opacity: calc(50%);
-  background: black;
-}
-
-.information-scroll {
-  display: none;
 }
